@@ -1,0 +1,21 @@
+{% extends "global/base.html" %}
+{% load static %}
+{% block content %}
+<h1> Linux Guides Video-Portal </h1>
+<p> This is a video portal for Linux Guides. </p>
+
+{% comment %} video_entry = {"description" : "", "thumbnail" : "", "video" : "", "title": ""} {% endcomment %}
+
+
+{% for video_entry in video_entries %}
+<div class="video-entry">
+    <div class="video-entry-thumbnail">
+        <img src="{{video_entry.thumbnail}}" alt="Thumbnail" />
+    </div>
+    <div class="video-entry-description">
+        <h2>{{ video_entry.title }}</h2>
+        <p>{{ video_entry.description|safe}}</p>
+        <a href="{{ video_entry.video }}">Video</a>
+    </div>
+{% endfor %}
+{% endblock %}
