@@ -2,11 +2,25 @@
 
 Local video portal written in django for tutorial videos. Written in django.
 
-## How to create video directory
+## How to run for production
 
 ```bash
-
+docker-compose up -d --build
 ```
+
+You can reach the server under the port 21000.
+
+## How to run for development
+
+```bash
+cd videoportal
+python3 manage.py runserver
+```
+
+## How to create video directory
+
+You need to place the new content in `videoportal/static/videoportal/`.
+A demo entry is available.
 
 ### Structure
 
