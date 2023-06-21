@@ -5,6 +5,13 @@ Local video portal written in django for tutorial videos. Written in django.
 ## How to run for production
 
 ```bash
+docker-compose up -d
+```
+
+### How to update (for new version or videocontent)
+
+```bash
+git pull
 docker-compose up -d --build
 ```
 
