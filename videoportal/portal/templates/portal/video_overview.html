@@ -1,0 +1,58 @@
+{% extends "global/base.html" %}
+{% load static %}
+{% block content %}
+<h1> Linux Arbeitsplatz Video-Portal </h1>
+
+{% comment %} video_entry = {"description" : "", "thumbnail" : "", "video" : "", "title": ""} {% endcomment %}
+
+<br>
+
+<form class="form-inline" action="" method="get">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <input type="text" class="form-control" name="q" value="{{ search }}" placeholder="Suchbegriff eingeben">
+            </div>
+        </div>
+        <div class="col-md-1 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Suchen</button>
+        </div>
+    </div>
+  </form>
+
+  <br>
+
+<div class="container">
+    <ul class="list-group">
+{% for video_entry in video_entries %}
+    {% if search == "" or search in video_entry.title or search in video_entry.description %}
+    <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="{% url 'video' video_entry.id %}"><img src="{{video_entry.thumbnail}}" class="img-fluid" alt="Thumbnail" /></a>
+          </div>
+          <div class="col-md-6">
+            <a href="{% url 'video' video_entry.id %}"><h3>{{ video_entry.title }}</h3></a>
+            <p>{{ video_entry.description_preview|safe}}</p>
+            
+          </div>
+          <div class="col-md-2 d-flex justify-content-center align-items-center">
+            <a href="{% url 'video' video_entry.id %}"><button type="button" class="btn btn-primary">Jetzt ansehen</button></a>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+{% endfor %}
+    </ul>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="col-md d-flex justify-content-center align-items-center">
+  <a href="mailto:kontakt@linuxguides.de?subject=Frage%20%C3%BCber%20den%20Linux-Arbeitsplatz%3A">Nicht fündig geworden? Jetzt E-Mail schreiben</a>
+</div>
+
+
+{% endblock %}

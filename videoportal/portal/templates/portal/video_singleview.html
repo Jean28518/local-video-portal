@@ -1,0 +1,38 @@
+{% extends "global/base.html" %}
+{% load static %}
+{% block content %}
+<h1> Linux Arbeitsplatz Video-Portal </h1>
+
+<br>
+
+{% comment %} video_entry = {"description" : "", "thumbnail" : "", "video" : "", "title": ""} {% endcomment %}
+
+<h2>{{video_entry.title}}</h2>
+
+<video class="w-100" controls>
+  <source src="/{{ video_entry.video }}" type="video/mp4" />
+</video>
+
+<h3>Beschreibung</h3>
+<p>{{video_entry.description|safe}}</p>
+
+<br>
+<br>
+
+<div class="col-md d-flex justify-content-center align-items-center">
+  <a href="{% url 'index' %}"><button type="button" class="btn btn-secondary">Zurück zur Übersicht</button></a>
+</div>
+
+
+
+
+<br>
+<hr>
+<br>
+
+<div class="col-md d-flex justify-content-center align-items-center">
+  <a href="mailto:kontakt@linuxguides.de?subject=Frage%20%C3%BCber%20den%20Linux-Arbeitsplatz%3A">Nicht fündig geworden? Jetzt E-Mail schreiben</a>
+</div>
+
+
+{% endblock %}

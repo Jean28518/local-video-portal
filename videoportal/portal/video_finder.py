@@ -13,6 +13,7 @@ def get_all_videos():
     
     content_dir = os.path.join(settings.STATICFILES_DIRS[0], "videoportal", "content")
     videos = []
+    id = 0
     for year in os.listdir(content_dir):
         for month in os.listdir(os.path.join(content_dir, year)):
             for video in os.listdir(os.path.join(content_dir, year, month)):
@@ -26,5 +27,11 @@ def get_all_videos():
                         video_entry["thumbnail"] = os.path.join("static", "videoportal", "content", year, month, video, file)
                     elif file.endswith(".mp4"):
                         video_entry["video"] = os.path.join("static", "videoportal", "content", year, month, video, file)
+                video_entry["id"] = id
+                id += 1
+
+                # Generate description preview
+                video_entry["description_preview"] = video_entry["description"][:100] + "..."                
+
                 videos.append(video_entry)
     return videos
