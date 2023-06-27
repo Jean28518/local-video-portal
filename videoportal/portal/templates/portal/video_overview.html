@@ -32,7 +32,7 @@
             <a href="{% url 'video' video_entry.id %}"><img src="{{video_entry.thumbnail}}" class="img-fluid" alt="Thumbnail" /></a>
           </div>
           <div class="col-md-6">
-            <a href="{% url 'video' video_entry.id %}"><h3>{{ video_entry.title }}</h3></a>
+            <h3>{{ video_entry.title }}</h3>
             <p>{{ video_entry.description_preview|safe}}</p>
             
           </div>

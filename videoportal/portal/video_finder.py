@@ -31,7 +31,7 @@ def get_all_videos():
                 id += 1
 
                 # Generate description preview
-                video_entry["description_preview"] = video_entry["description"][:100] + "..."                
+                video_entry["description_preview"] = video_entry["description"][:250] + "..."                
 
                 videos.append(video_entry)
     return videos
