@@ -5,6 +5,8 @@ Local video portal written in django for tutorial videos. Written in django.
 ## How to run for production
 
 ```bash
+git clone https://github.com/Jean28518/local-video-portal.git
+cd local-video-portal
 docker-compose up -d
 ```
 
