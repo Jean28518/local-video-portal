@@ -30,6 +30,7 @@ python3 manage.py runserver
 
 You need to place the new content in `videoportal/static/videoportal/`.
 A demo entry is available.
+After changing content a `docker-compose up -d --build` is required.
 
 ### Structure
 
