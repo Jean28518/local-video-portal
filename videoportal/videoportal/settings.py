@@ -135,3 +135,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Needed for gunicon
 STATIC_ROOT = '/static/'
+
+ALLOWED_HOSTS = ['*']
