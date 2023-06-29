@@ -137,5 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = '/static/'
 
 ALLOWED_HOSTS = ['*']
+
+# Allow iframe:
 X_FRAME_OPTIONS = 'ALLOW-FROM https://*'
 
