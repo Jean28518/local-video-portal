@@ -1,11 +1,16 @@
 {% extends "global/base.html" %}
 {% load static %}
 {% block content %}
-<h1> Libre Workspace Video-Portal </h1>
+<div class="container">
+  <center>
+      <a href="{% url 'index' %}"><button type="button" class="btn btn-outline-dark btn-lg">Zurück zur Übersicht</button></a>
+  </center>
 
 <br>
 
 {% comment %} video_entry = {"description" : "", "thumbnail" : "", "video" : "", "title": ""} {% endcomment %}
+
+
 
 <h2>{{video_entry.title}}</h2>
 
